@@ -1,8 +1,28 @@
-//
-// Created by mar on 08.04.18.
-//
+#pragma once
 
-#ifndef PROJECT_SOME_HPP
-#define PROJECT_SOME_HPP
+#include <string>
 
-#endif //PROJECT_SOME_HPP
+using std::string;
+
+class Some
+{
+public:
+	static const int NOT_AN_IDENTIFIER;
+
+	Some();
+	Some( int some_id, string const& name );
+
+	int ID() const;
+	string const& Name() const;
+
+	void ResetID();
+	void ResetID( int some_id );
+
+	void ChangeName( string const& name );
+
+	void SomeChanges( int some_id, string const& name );
+
+private:
+	int mID;
+	string mName;
+};

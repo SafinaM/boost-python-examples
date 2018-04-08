@@ -1,10 +1,14 @@
-cmake_minimum_required(VERSION 2.8.3)
+cmake_minimum_required(VERSION 3.8)
+
+set(CMAKE_CXX_STANDARD 11)
+set(CMAKE_CXX_STANDARD_REQUIRED ON)
+
 FIND_PACKAGE(PythonInterp)
 FIND_PACKAGE(PythonLibs)
 if (${PYTHON_VERSION_MAJOR} EQUAL 3)
-    FIND_PACKAGE(Boost COMPONENTS python3)
+    FIND_PACKAGE(Boost COMPONENTS python3 thread)
 else()
-    FIND_PACKAGE(Boost COMPONENTS python)
+    FIND_PACKAGE(Boost COMPONENTS python thread REQUIRED)
 endif()
 
 ENABLE_TESTING()
@@ -24,3 +28,4 @@ ADD_SUBDIRECTORY(10-Embedding)
 ADD_SUBDIRECTORY(11-Iterators)
 ADD_SUBDIRECTORY(12-Exceptions)
 ADD_SUBDIRECTORY(13-AutoInstantiation)
+ADD_SUBDIRECTORY(some)

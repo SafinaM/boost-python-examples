@@ -1,5 +1,5 @@
 
-PYTHON_ADD_MODULE(operators operators.cpp)
-FILE(COPY operators.py DESTINATION .)
-ADD_TEST(NAME 07-Operators COMMAND ${PYTHON_EXECUTABLE} operators.py)
+PYTHON_ADD_MODULE(example single.cpp some.cpp wrap.cpp)
+FILE(COPY some.py DESTINATION .)
+ADD_TEST(NAME some COMMAND ${PYTHON_EXECUTABLE} some.py)
 
